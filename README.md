@@ -1,6 +1,6 @@
 # 🚓 Los Angeles Crime Patterns & Forecasting
 
-Exploratory analysis and time-series forecasting of **~897,000 crime records** (29 features) from the Los Angeles Police Department's open data, 2020 to early 2024. The analysis focuses on battery and simple assault, the most common violent-crime category. It looks at **when, where and how** incidents happen, then forecasts monthly volumes with **SARIMA** to support police staffing and resource planning.
+Exploratory analysis and time-series forecasting of **897,000 crime records** (29 features) from the Los Angeles Police Department's open data, 2020 to early 2024. The analysis focuses on battery and simple assault, the most common violent-crime category. It looks at **when, where and how** incidents happen, then forecasts monthly volumes with **SARIMA** to support police staffing and resource planning.
 
 **Tools:** Python · pandas · Matplotlib · Seaborn · statsmodels (seasonal decomposition, SARIMA) · Folium (mapping) · TextBlob & WordCloud (text analysis)
 
@@ -14,7 +14,7 @@ Exploratory analysis and time-series forecasting of **~897,000 crime records** (
 
 | Finding | Detail |
 |---|---|
-| 📈 **Rising trend** | Battery / simple assault reports rose from ~16,000 in 2021 to **~18,900 in 2023** |
+| 📈 **Rising trend** | Battery / simple assault reports rose from 16,000 in 2021 to **18,900 in 2023** |
 | ☀️ **Summer peak** | **July** is the worst month (6,364 incidents) and **February** the quietest (5,176), a 23% swing (2020–23 combined) |
 | 🕒 **Afternoon peak** | Incidents peak at **3–6 pm**, are lowest around **5 am**, and spike on **weekend late nights** |
 | 📍 **Hotspots** | **Central** division leads (6,429 incidents), followed by **77th Street** (4,273) |
