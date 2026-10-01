@@ -1,0 +1,11 @@
+pandas>=2.1
+numpy
+matplotlib
+seaborn
+statsmodels>=0.14
+scikit-learn
+textblob
+wordcloud
+nltk
+folium
+jupyter

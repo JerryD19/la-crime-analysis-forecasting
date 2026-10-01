@@ -2,7 +2,9 @@
 
 Exploratory analysis and time-series forecasting of **~897,000 crime records** (29 features) from the Los Angeles Police Department's open data, 2020 to early 2024. The analysis focuses on battery and simple assault, the most common violent-crime category. It looks at **when, where and how** incidents happen, then forecasts monthly volumes with **SARIMA** to support police staffing and resource planning.
 
-**Tools:** Python · pandas · Matplotlib · Seaborn · statsmodels (seasonal decomposition, SARIMA) · sentiment analysis · word clouds · geospatial mapping
+**Tools:** Python · pandas · Matplotlib · Seaborn · statsmodels (seasonal decomposition, SARIMA) · Folium (mapping) · TextBlob & WordCloud (text analysis)
+
+📓 **Code:** [`notebooks/la_crime_analysis.ipynb`](notebooks/la_crime_analysis.ipynb), the full analysis with outputs
 
 **Data:** [Crime Data from 2020 to Present, LA Open Data](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8)
 
@@ -35,6 +37,10 @@ The hour × weekday heatmap shows weekday afternoons and **weekend late nights**
 
 ![Incidents by LAPD area](images/incidents_by_area.png)
 
+Incidents were also mapped with Folium marker clusters to show street-level hotspots:
+
+<img src="images/incident_map.png" width="600" alt="Folium map of incident clusters">
+
 ## Forecasting with SARIMA
 
 The monthly series was split into **trend** and **seasonal** components, then a SARIMA model was trained on the first 80% of months and tested on the last 20%.
@@ -44,7 +50,7 @@ The monthly series was split into **trend** and **seasonal** components, then a 
   <img src="images/seasonal_component.png" width="49%" alt="Seasonal component" />
 </p>
 
-The forecast (red) tracks the mid-2023 summer surge and the autumn decline in the held-out data (orange):
+The model is SARIMA(1,1,1)(1,1,1,12), trained on 2020 to early 2023 and tested on the remaining months. The forecast (red) tracks the mid-2023 summer surge and the autumn decline in the held-out data (orange). **Test RMSE ≈ 103 incidents per month**, about 6–7% of a typical month's volume.
 
 ![SARIMA forecast vs actual](images/sarima_forecast.png)
 
@@ -65,6 +71,17 @@ Crime data contains sensitive information about victims. The analysis uses only 
 - Compare SARIMA with Prophet and gradient-boosted models, and report MAE/MAPE alongside MSE so errors are easy to interpret.
 - Build an interactive Power BI or Streamlit dashboard so area commanders can filter by division, hour and crime type.
 - Add external drivers (temperature, holidays, major events) to explain the summer peak.
+
+## Repository structure
+
+```
+├── notebooks/la_crime_analysis.ipynb   # Full analysis: cleaning, EDA, mapping, decomposition, SARIMA, text analysis
+├── images/                             # Figures used in this README
+├── data/                               # Download instructions (data not included)
+└── requirements.txt
+```
+
+**To run:** `pip install -r requirements.txt`, download the CSV (see `data/README.md`) into `notebooks/`, then run the notebook.
 
 ---
 
