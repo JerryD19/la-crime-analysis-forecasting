@@ -13,7 +13,7 @@ Exploratory analysis and time-series forecasting of **~897,000 crime records** (
 | Finding | Detail |
 |---|---|
 | 📈 **Rising trend** | Battery / simple assault reports rose from ~16,000 in 2021 to **~18,900 in 2023** |
-| ☀️ **Summer peak** | **July** is the worst month (6,364 incidents) and **February** the quietest (5,176), a 23% swing |
+| ☀️ **Summer peak** | **July** is the worst month (6,364 incidents) and **February** the quietest (5,176), a 23% swing (2020–23 combined) |
 | 🕒 **Afternoon peak** | Incidents peak at **3–6 pm**, are lowest around **5 am**, and spike on **weekend late nights** |
 | 📍 **Hotspots** | **Central** division leads (6,429 incidents), followed by **77th Street** (4,273) |
 | 🏠 **Where it happens** | The top locations are single-family homes, streets and multi-unit housing |
